@@ -1,0 +1,14 @@
+{
+  "name": "landix",
+  "version": "1.0.0",
+  "description": "CLI for Landix UI components",
+  "main": "index.js",
+  "bin": {
+    "landix": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Landix Art",
+  "license": "MIT"
+}
