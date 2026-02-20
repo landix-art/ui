@@ -1,5 +1,5 @@
 {
-  "name": "landix",
+  "name": "landix-ui",
   "version": "1.0.0",
   "description": "CLI for Landix UI components",
   "main": "index.js",
