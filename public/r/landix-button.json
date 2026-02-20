@@ -1,0 +1,16 @@
+{
+  "name": "landix-button",
+  "type": "registry:ui",
+  "dependencies": [
+    "framer-motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "landix-button.tsx",
+      "content": "import * as React from \"react\"\r\nimport { motion, HTMLMotionProps } from \"framer-motion\"\r\nimport { clsx, type ClassValue } from \"clsx\"\r\nimport { twMerge } from \"tailwind-merge\"\r\n\r\n// Utility function inline for simplicity in portability\r\nfunction cn(...inputs: ClassValue[]) {\r\n  return twMerge(clsx(inputs))\r\n}\r\n\r\ninterface LandixButtonProps extends HTMLMotionProps<\"button\"> {\r\n  children: React.ReactNode\r\n  variant?: \"gold\" | \"glass\"\r\n}\r\n\r\nconst LandixButton = React.forwardRef<HTMLButtonElement, LandixButtonProps>(\r\n  ({ className, children, variant = \"gold\", ...props }, ref) => {\r\n    return (\r\n      <motion.button\r\n        ref={ref}\r\n        whileHover={{ scale: 1.05 }}\r\n        whileTap={{ scale: 0.95 }}\r\n        className={cn(\r\n          \"relative overflow-hidden rounded-xl px-8 py-3 font-bold transition-all duration-300\",\r\n          // Gold Style\r\n          variant === \"gold\" && [\r\n            \"bg-gradient-to-b from-yellow-300 via-amber-400 to-yellow-500\",\r\n            \"text-amber-950\",\r\n            \"border border-amber-200\",\r\n            \"shadow-[0_0_20px_rgba(251,191,36,0.4)]\",\r\n            \"hover:shadow-[0_0_30px_rgba(251,191,36,0.8)]\"\r\n          ],\r\n          // Glass Style\r\n          variant === \"glass\" && [\r\n            \"bg-white/10 backdrop-blur-lg border border-white/20\",\r\n            \"text-white shadow-lg\"\r\n          ],\r\n          className\r\n        )}\r\n        {...props}\r\n      >\r\n        <span className=\"relative z-10 flex items-center gap-2\">{children}</span>\r\n        {/* Shimmer Effect */}\r\n        <div className=\"absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/50 to-transparent z-0\" />\r\n      </motion.button>\r\n    )\r\n  }\r\n)\r\nLandixButton.displayName = \"LandixButton\"\r\n\r\nexport { LandixButton }\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

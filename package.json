@@ -1,0 +1,31 @@
+{
+  "name": "landix-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:registry": "tsx scripts/build-registry.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/landix-art/ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/landix-art/ui/issues"
+  },
+  "homepage": "https://github.com/landix-art/ui#readme",
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "fs-extra": "^11.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
